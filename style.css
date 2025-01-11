@@ -1,0 +1,222 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;/*"Poppins", sans-serif; */
+    color:#fff;
+}
+
+ /* body{
+    min-height: 100vh;
+    background: url('2024worlds.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    //
+}  */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 3, 3, .5);/* rgba(0, 0, 0, .1);*/
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}  
+
+.logo {
+    font-size: 2rem;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 700;
+} 
+
+.navbar a {
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#check {
+    display: none;
+}
+
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+nav a{
+    cursor: pointer;
+}
+
+nav a:hover{
+    border-top:#fff 1.5px solid;
+    border-bottom:#fff 1.5px solid;
+}
+
+nav .current{
+    border-bottom:#fff 1.5px solid;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px){
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none; 
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon{
+        display: block; 
+    } 
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar{
+        height: 17.7rem;
+    } 
+
+    .navbar a{
+        display: block; 
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+    nav a:hover{
+        border-top: none;
+        border-bottom: none;
+        
+    }
+
+    nav .current{
+        border-bottom: none;
+    }
+
+    #check:checked~.navbar a{   
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+}
+
+#top{
+    background: url('2024worlds.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 70vh; 
+    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#top p {
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+}
+
+ body{
+    background-color: #333;
+}
+
+#about{
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    width: 55%;
+    font-size: 1rem;
+
+}
+
+#logo-image{
+    display: inline-block;
+    float: right;
+    padding-right: 10rem;
+
+}
+
+#robot-gallery{
+    color: #fff;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+#robot-gallery img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#awards-gallery{
+    color: #fff;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(6, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+#other{
+    color: #fff;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
