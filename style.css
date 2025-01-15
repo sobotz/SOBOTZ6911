@@ -4,11 +4,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;/*"Poppins", sans-serif; */
-    color:#fff;
+    color:#e0dddd;
 }
 p{
     font-size: 1.15rem;
-    color:#fff;
+    color:#e0dddd;
 }
  /* body{
     min-height: 100vh;
@@ -17,6 +17,8 @@ p{
     background-position: center;
     //
 }  */
+
+/*----- header -----*/
 
 .header{
     position: fixed;
@@ -47,6 +49,7 @@ p{
     color:#fff;
     text-decoration: none;
     font-weight: 700;
+    
 } 
 
 .navbar a {
@@ -151,8 +154,7 @@ nav .current{
 }
 
 #top{
-    background: url('2024worlds.jpeg') no-repeat center center;
-    /* filter: contrast(65%); */
+    background: linear-gradient(rgb(4,9,30,0.2),rgba(4,9,30,0.2)),url(images/2024worlds.jpeg) no-repeat center center;
     background-size: cover;
     height: 70vh; 
     color: white; 
@@ -173,12 +175,115 @@ nav .current{
 
 body{
     background-color: #333;
+
+}
+
+/*----- about section -----*/
+
+.about{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+}
+
+H1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p{
+    color: 333;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+/*----- robot section -----*/
+
+.robots{
+    background-color: #4c4b4b;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.robot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.robot-image{
+    width: 400px;
+    height: auto;
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+
+/* .robots-home{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.robot{
+    border-radius: 10px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.robot-image{
+    width: 100%;
+    height: 200px;
+    margin-top: 5%;
+    object-fit: cover;
+    border-radius: 10px;
+} */
+
+.robot-image{
+    margin-top: 5%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btn-container{
+    text-align: center;
+}
+
+.robots-btn{
+    display: inline-block;
+    text-decoration: none;
+    /* border: 1px solid #fff; */
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 18px;
+    background: #d9362a;
+}
+
+.robots-btn:hover{
+    /* border: 1px solid #f44336; */
+    background: #b92e24;
+    color: #fff;
+    transition: .5s;
 }
 
 
-/* section */
 
-#about{
+
+
+/* #about{
     display: flex;
     padding: 2rem; 
 
@@ -243,4 +348,4 @@ body{
     grid-template-columns: repeat(1, minmax(300px, 1fr));
     gap: 1rem;
     padding: 2rem;
-}
+} */
