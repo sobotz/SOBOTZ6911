@@ -10,6 +10,7 @@
 H1{
     font-size: 1.9rem;
     font-weight: 600;
+    margin: 2rem;
 }
 
 p{
@@ -198,6 +199,7 @@ body{
     text-align: center;
     padding: 30px;
     background-color: #333;
+    padding-bottom: 0px;
 }
 
 /*----- robot section -----*/
@@ -213,6 +215,7 @@ body{
     margin: auto;
     text-align: center;
     padding-top: 3rem;
+    background-color:#333;
 }
 
 .robots-home-col{
@@ -225,13 +228,17 @@ body{
 
 .robots-home-col img{
     width: 100%;
-    display: block;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: inline-block;
 }
 
 .layer{
     background: transparent;
-    height: 100%;
+    height: 200px;
     width: 100%;
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -239,10 +246,10 @@ body{
 }
 
 .layer:hover{
-    background: rgba(226,0,0,0.7);
+    background: rgba(226,0,0,0.4);
 }
 
-.layer h3{
+.layer a{
     width: 100%;
     font-weight: 500;
     color: #fff;
@@ -253,11 +260,20 @@ body{
     position: absolute;
     opacity: 0;
     transition: 0.5s;
+    text-decoration: none;
 }
-.layer:hover h3{
+.layer:hover a{
     bottom: 49%;
     opacity: 1;
+}
 
+a:hover{
+    scale: 1.1;
+}
+
+.robot-title{
+    color: red;
+    text-align: center;
 }
 
 @media(max-width: 700px){
@@ -266,6 +282,52 @@ body{
     }
 }
 
+.robots-btn{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 34px;
+    margin-bottom: 2rem;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 18px;
+    /* background: #d9362a; */
+    background: #AD1F1F;
+    transition: .5s ease-in-out;
+}
+
+.robots-btn:hover{
+  
+    background: #6b1313;
+    color: #fff;
+    transition: .5s;
+}
+
+/*----- outreach section -----*/
+
+.outreach-home{
+    text-align: center;
+}
+
+iframe{
+    border: 1px solid;
+    width: 40%;
+    height: 600px;
+    background-color: #525252;
+}
+
+/*------ footer section ------*/
+
+footer{
+    background-color: #525252; 
+    text-align: center;
+}
+
+footer h1{
+    padding: 2rem;
+    padding-bottom: 30rem;
+}
 
 /* .robots{
     display: flex;
