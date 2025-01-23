@@ -15,8 +15,9 @@ H1{
 
 p{
     color:#e0dddd;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 300;
+    line-height: 1.8;
 }
 
  /* body{
@@ -202,6 +203,28 @@ body{
     padding-bottom: 0px;
 }
 
+.about p{
+    padding-right: 3rem;
+    text-align: left;
+}
+
+.about-left{
+    align-content: center;
+    padding: 2rem;
+    margin-left: 3rem;
+}
+
+.about-right{
+    align-content: center;
+    margin-right: 5rem;
+}
+
+.about img{
+    width: 100%;
+    border-radius: 10px;    
+}
+
+
 /*----- robot section -----*/
 
 .row{
@@ -267,9 +290,9 @@ body{
     opacity: 1;
 }
 
-a:hover{
+/* a:hover{
     scale: 1.1;
-}
+} */
 
 .robot-title{
     color: red;
@@ -293,7 +316,7 @@ a:hover{
     cursor: pointer;
     border-radius: 18px;
     /* background: #d9362a; */
-    background: #AD1F1F;
+    background: #BF2222;
     transition: .5s ease-in-out;
 }
 
@@ -317,6 +340,18 @@ iframe{
     background-color: #525252;
 }
 
+/*------ awards section ------*/
+
+.awards{
+    text-align: center;
+    margin: 3rem;
+    
+}
+.awards img{
+    width: 10%;
+    margin: .3rem;
+}
+
 /*------ footer section ------*/
 
 footer{
@@ -328,6 +363,7 @@ footer h1{
     padding: 2rem;
     padding-bottom: 30rem;
 }
+
 
 /* .robots{
     display: flex;
