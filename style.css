@@ -25,7 +25,7 @@
     --h5-size: 22px;
     --h6-size: 20px;
     --subtitle-size: 17px;
-    --subtitle-height: 26px;
+    --subtitle-height: 20px;
     --p-size: 18px;
     --p-height: 26px;
     --secondary-text-size: 14px;
@@ -173,10 +173,12 @@ p{
     font-weight: 500;
     font-size: var(--subtitle-size);
     /* line-height: var(--subtitle-height); */
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .subtitle2{
-    color: var(--text-grey);
+    color: var(--red-1);
 }
 
 .secondary-text{
@@ -344,6 +346,7 @@ footer h1{
     color:#fff;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.25s ease;
     
 } 
 
@@ -459,6 +462,7 @@ footer h1{
         transform: translateY(-50px);
         opacity: 0;
         transition: .3s ease;
+        transition: color .3s ease 0s;
     }
 
     .navbar a::after{
@@ -474,20 +478,21 @@ footer h1{
     /* .navbar a{
         transition: color 0.1s ease;
     } */
+    
     .navbar a:hover{
         color: #bebbbb;
     }
+
     .navbar a.current{
         color: #bebbbb;
         font-weight: 600;
-
     }
 
     #check:checked~.navbar a{   
         transform: translateY(0);
         opacity: 1;
         transition-delay: calc(.15s * var(--i));
-
+        transition-property: transform, opacity;
     }
 }
 
@@ -630,6 +635,13 @@ footer h1{
     }
 }
 
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+
 /* .robots-btn{
     display: inline-block;
     color: #e0dddd;
@@ -688,7 +700,6 @@ footer h1{
     align-items: center;
     overflow: hidden;
     margin-top: 60px;
-    
 }
 
 .seasons-hero-container::before{
@@ -732,7 +743,7 @@ footer h1{
     background: #333;
     border: .2px solid #525252;
     z-index: 1;
-    max-width: 600px;
+    max-width: 700px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.6);
     
@@ -760,11 +771,15 @@ footer h1{
 
 /*----- SEASONS split section -----*/
 
-.seasons-robot{
+.seasons-robot {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     padding: var(--spacing-lg) calc(var(--spacing-xl) * 1.5);
+}
 
+.seasons-robot h1{
+    text-align: center;
 }
 
 .seasons-robot h4, h6{
@@ -798,6 +813,33 @@ footer h1{
     width: 100px;
     margin-left: var(--spacing-lg);
     margin-top: var(--spacing-lg);
+}
+
+/*----- SEASONS team section -----*/
+
+.seasons-team{
+    background-color: var(--black-light);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background: #333;
+    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+}
+
+.wrapper{
+    display: flex;
+    overflow-x: auto;
+}
+
+.wrapper::-webkit-scrollbar{
+    width: 0;
+}
+
+.wrapper .item{
+    width: 100px;
+    text-align: center;
+    margin-right: 2px;
 }
 
 /*--------------------------- RESOURCES PAGE --------------------------*/
@@ -868,35 +910,32 @@ footer h1{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 /*----- RESOURCES slideshow -----*/
-
-
-
 .slider{
     width: 800px;
-    height: 500px;
     border-radius: 10px;
     overflow: hidden;
-
+    position: relative;
 }
-
+ 
 .slides{
     width: 500%;
-    height: 500px;
     display: flex;
+    border-radius: 10px;
 }
-
+ 
 .slides input{
     display: none;
 }
 
 .slide{
     width: 20%;
-    transition: 2s;
+    transition: 1s;
 }
 
 .slide img{
     width: 800px;
-    height: 500px;
+    border-radius: 10px;
+    display: flex;
 }
 
 .navigation-manual{
@@ -908,7 +947,7 @@ footer h1{
 }
 
 .manual-btn{
-    border: 2px solid var(--red-1);
+    border: 2px solid red;/* border: 2px solid var(--red-1); */
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -916,11 +955,11 @@ footer h1{
 }
 
 .manual-btn:not(:last-child){
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .manual-btn:hover{
-    background: var(--red-1);
+    background: red;
 }
 
 #radio1:checked ~ .first{
@@ -937,6 +976,26 @@ footer h1{
 
 #radio4:checked ~ .first{
     margin-left: -60%;
+}
+
+#radio5:checked ~ .first{
+    margin-left: -80%;
+}
+
+#radio6:checked ~ .first{
+    margin-left: -100%;
+}
+
+#radio7:checked ~ .first{
+    margin-left: -120%;
+}
+
+#radio8:checked ~ .first{
+    margin-left: -140%;
+}
+
+#radio9:checked ~ .first{
+    margin-left: -160%;
 }
 /*--------------------------- OUTREACH PAGE --------------------------*/
 .outreach-body{
@@ -980,9 +1039,9 @@ html{
     transition: 0.3s ease-in-out;
 }
 
-.outreach-hero > div:hover > img{
+/* .outreach-hero > div:hover > img{
     filter: grayscale(100%);
-}
+} */
 
 .outreach-hero > div::before{
     content: '';
@@ -1052,7 +1111,7 @@ html{
     /* margin: 5em 0 1em 0; */
     margin: 1em 0 1em 0;
     font-weight: bold;
-    font-size: var(--btn-size);
+    /* font-size: var(--btn-size); */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1088,14 +1147,18 @@ html{
     opacity: 1;
 }
 
-@media screen and (max-width: 900px){
+ @media screen and (max-width: 900px){
     html{
         font-size: 14px;
     }
-}
+} 
 @media screen and (max-width: 750px){
     .outreach-hero{
         grid-template-columns: 1fr;
+    }
+
+    .break{
+        display: none;
     }
 }
 
