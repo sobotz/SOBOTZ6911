@@ -83,6 +83,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
     /* align-items: center; */
     /* padding: var(--spacing-sm) 0 0 0; */
 
@@ -168,7 +169,7 @@ p{
     margin: var(--spacing-md) 0;
 }
 
-.subtitle, .subtitle2{
+.subtitle, .subtitle2, .subtitle-spacing{
     color: var(--primary-accent);
     font-family: var(--heading-font);
     font-weight: 500;
@@ -180,6 +181,10 @@ p{
 
 .subtitle2{
     color: var(--red-1);
+}
+
+.subtitle-spacing{
+    margin-bottom: var(--spacing-lg);
 }
 
 .secondary-text{
@@ -262,7 +267,7 @@ p{
     justify-content: center;
 }
 
-.two-column-big{
+.two-column-big, .two-column-big-right{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -271,7 +276,7 @@ p{
     box-sizing: border-box;
 }
 
-.two-column-big > .col-left{
+.two-column-big > .col-left, .two-column-big-right > .col-right{
     width: 60%;
     box-sizing: border-box;
     padding: 0 var(--spacing-md) 0 0;
@@ -281,7 +286,7 @@ p{
     justify-content: center;
 }
 
-.two-column-big >.col-right{
+.two-column-big >.col-right, .two-column-big-right > .col-left{
     width: 40%;
     box-sizing: border-box;
     padding: 0 0 0 var(--spacing-md);
@@ -289,6 +294,16 @@ p{
     flex-direction: column;
     align-items: start;
     /* justify-content: center; */
+}
+
+.two-column-big-right > .col-right{
+    padding: 0 0 0 var(--spacing-md);
+    width: 55%;
+}
+
+.two-column-big-right > .col-left{
+    padding: 0 var(--spacing-md) 0 0;
+    width: 45%;
 }
 
  /* body{
@@ -309,10 +324,10 @@ p{
 
 }
 
-footer h1{
+/* footer h1{
     padding-bottom: 30rem;
     
-}
+} */
 /*--------------------------- HEADER --------------------------*/
 
 .header{
@@ -424,7 +439,7 @@ footer h1{
     width: 100%;
     margin: auto;
     text-align: center;
-    padding: 30px;
+    padding: 30px ;
     background-color: var(--bg-reg);
     padding-bottom: 0px;
 }
@@ -436,7 +451,6 @@ footer h1{
 
 .about-left{
     align-content: center;
-    padding: 2rem;
     margin-left: 3rem;
 
 }
@@ -454,7 +468,6 @@ footer h1{
 
 /*----- HOME robot -----*/
 .row{
-    margin-top: 5%;
     display: flex;
     justify-content: space-between;
 }
@@ -567,16 +580,42 @@ footer h1{
     background-color: #525252;
 } */
 
-/*------ HOME awards ------*/
+/*------ HOME quotes ------*/
 
-.awards{
+.quotes p{
     text-align: center;
-    margin: 3rem;
+    margin-bottom: var(--spacing-lg);
+}
+.quotes{
+    background-color: var(--bg-light);
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
     
 }
-.awards img{
-    width: 10%;
-    margin: .3rem;
+
+.wrapper-scroll{
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.wrapper-scroll::-webkit-scrollbar{
+    width: 0;
+}
+
+
+
+.wrapper-scroll .item{
+    min-width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-reg);
+    margin-right: var(--spacing-md);
+    scroll-snap-align: start;
 }
 
 /*--------------------------- SEASONS PAGE --------------------------*/
@@ -1051,8 +1090,13 @@ html{
     color: var(--text-dark);
 } */
 
+.approach{
+    text-align: center;
+    padding: 0 var(--spacing-xxl);
+}
+
 .outreach-section{
-    max-width: var(--standard-width);
+    /* max-width: var(--standard-width); */
     padding: var(--spacing-lg) var(--spacing-xxl);
 }
 
@@ -1068,7 +1112,15 @@ html{
 
 .sponsors-container h1{
     margin: 5rem 0rem 3rem 0rem;
+}
 
+.sponsors-container h1::after{
+    content: '';
+    
+    width: 200px;
+    height: 3px;
+    background: var(--red-1);
+    display: block;
 }
 
 .tiers-container{
@@ -1076,7 +1128,7 @@ html{
 }
 
 .tiers-container h3{
-    margin-bottom: 15rem;
+    /* margin-bottom: 15rem; */
 }
 
 
@@ -1098,16 +1150,16 @@ html{
         --spacing-xxl: 64px;
     }
     
-    .two-column, .two-column-big{
+    .two-column, .two-column-big, .two-column-big-right{
         flex-direction: column;
     }
 
-    .two-column .col-left, .two-column-big .col-left{
+    .two-column .col-left, .two-column-big .col-left, .two-column-big-right .col-left{
         width: 100%;
         padding: 0;
     }
 
-    .two-column .col-right, .two-column-big .col-right{
+    .two-column .col-right, .two-column-big .col-right, .two-column-big-right .col-right{
         width: 100%;
         padding: 0;
     }
