@@ -7,6 +7,9 @@
 .test2{
     background-color: var(--red-light);
 }
+.notes{
+    display: none;
+}
 :root{
     --text-dark: #000;
     --text-light: #e0dddd;
@@ -318,10 +321,35 @@ p{
 /*--------------------------- FOOTER --------------------------*/
 
 .footer{
-    background-color: var(--bg-dark);
+    background-color: var(--bg-reg);
     text-align: center;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    max-width: var(--standard-width);
+    margin: 0 auto;
+}
 
+.footer img{
+    width: 20%;
+}
+
+.footer .footer-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+}
+
+.footer img:not(.footer-row img){
+    width: 25%;
+}
+
+#footer-big{
+    width: 40%;
 }
 
 /* footer h1{
@@ -411,11 +439,11 @@ p{
 
 /*--------------------------- HOME PAGE --------------------------*/
 /*----- HOME hero -----*/
-    
+
 .home-hero-container{
     background: url(images/2024worlds.jpeg) no-repeat center center;
     background-size: cover;
-    height: 70vh; 
+    height: 80vh; 
     color: white; 
     display: flex;
     justify-content: center;
@@ -449,6 +477,10 @@ p{
     text-align: left;
 }
 
+.about h1{
+    margin-bottom: var(--spacing-xl);
+}
+
 .about-left{
     align-content: center;
     margin-left: 3rem;
@@ -472,11 +504,14 @@ p{
     justify-content: space-between;
 }
 
+.robots-home h2{
+    margin: var(--spacing-lg) 0;
+}
+
 .robots-home{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 3rem;
     background-color: var(--bg-reg);
 
 }
@@ -617,8 +652,6 @@ p{
     width: 0;
 }
 
-
-
 .wrapper-scroll .item{
     min-width: 300px;
     height: 300px;
@@ -716,6 +749,7 @@ p{
 .seasons-robot {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: var(--spacing-lg) var(--spacing-xxl);
 }
@@ -743,7 +777,6 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 600px; */
     overflow: hidden;
 }
 
@@ -756,7 +789,14 @@ p{
     width: 50%;
 } */
 
-.seasons-awards > img{
+/* .seasons-awards{
+    display: flex;
+    justify-content: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+} */
+
+ .seasons-awards > img{
     width: 100px;
     margin-left: var(--spacing-lg);
     margin-top: var(--spacing-lg);
@@ -1113,7 +1153,7 @@ html{
 }
 
 .outreach-section h2{
-    color: var(--red-1);
+    color: var(--red-light);
 }
 
 /*--------------------------- SPONSORS PAGE --------------------------*/
@@ -1153,6 +1193,22 @@ html{
 /*--------------------------- BREAKPOINTS --------------------------*/
 /*----- TABLET size -----*/
 @media only screen and (max-width: 768px){
+    :root{
+        --h1-size: 40px;
+        --h1-height: 65px;
+        --h2-size: 35px;
+        --h2-height: 60px;
+        --h3-size: 28px;
+        --h4-size: 24px;
+        --h5-size: 20px;
+        --h6-size: 18px;
+
+        --spacing-sm: 8px;
+        --spacing-md: 16px;
+        --spacing-lg: 32px;
+        --spacing-xl: 48px;
+            
+    }
 }
 
 /*----- MOBILE size -----*/
@@ -1176,10 +1232,13 @@ html{
     }
 }
 
-/*----- HOME robot -----*/
+/*----- HOME -----*/
 @media only screen and (max-width: 700px){
     .row{
         flex-direction: column;
+    }
+    .home-hero-container{
+        height: 50vh;
     }
 }
 
@@ -1188,6 +1247,11 @@ html{
     html{
         font-size: 14px;
     }
+    .outreach-hero h2{
+        font-size: 35px;
+    }
+
+    
 } 
 @media only screen and (max-width: 750px){
     .outreach-hero{
